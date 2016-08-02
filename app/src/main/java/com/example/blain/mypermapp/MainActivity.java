@@ -94,9 +94,13 @@ public class MainActivity extends AppCompatActivity {
             switch(permission){
                 case Manifest.permission.READ_CONTACTS:
                     ActivityCompat.requestPermissions(this, new String[]{ permission}, MY_PERM_READ_CONTACTS);
+                    Toast.makeText(getApplicationContext(), "Permissions have now been granted for reading Contacts",
+                            Toast.LENGTH_SHORT).show();
                     break;
                 case Manifest.permission.CAMERA:
                     ActivityCompat.requestPermissions(this, new String[] {permission}, MY_PERM_CAMERA);
+                    Toast.makeText(getApplicationContext(), "Permissions have now been granted for using the Camera",
+                            Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     break;
