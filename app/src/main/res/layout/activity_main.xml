@@ -2,6 +2,7 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -10,8 +11,37 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.example.blain.mypermapp.MainActivity">
 
-    <TextView
-            android:text="Hello World!!"
+    <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/checkContactsPermBtn"
+            android:text="@string/checkContactPermissions"
+            android:gravity="center"
+    />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reqContactsPermBtn"
+            android:text="@string/reqContactPermissionMessage"
+            android:gravity="center"
+            android:layout_below="@id/checkContactsPermBtn"
+            android:layout_marginBottom="30dp"
+    />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkCameraPermBtn"
+            android:text="@string/checkCameraPermissions"
+            android:gravity="center"
+            android:layout_below="@id/reqContactsPermBtn"
+    />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reqCameraPermBtn"
+            android:text="@string/reqCameraPermissionMessage"
+            android:gravity="center"
+            android:layout_below="@id/checkCameraPermBtn"
+
+    />
 </RelativeLayout>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyPermApp</string>
+    <string name="reqContactPermissionMessage">Request Contacts Permission</string>
+    <string name="checkContactPermissions">Check Contacts Permission</string>
+    <string name="reqCameraPermissionMessage">Request Camera Permission</string>
+    <string name="checkCameraPermissions">Check Camera Permission</string>
 </resources>
