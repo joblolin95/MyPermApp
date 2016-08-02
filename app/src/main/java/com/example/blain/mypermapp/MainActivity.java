@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     message = "You do not have permission to access Contacts - request for permission";
                 }
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     message = "You do not have permission to access the Camera - request for permission";
                 }
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -94,17 +94,41 @@ public class MainActivity extends AppCompatActivity {
             switch(permission){
                 case Manifest.permission.READ_CONTACTS:
                     ActivityCompat.requestPermissions(this, new String[]{ permission}, MY_PERM_READ_CONTACTS);
-                    Toast.makeText(getApplicationContext(), "Permissions have now been granted for reading Contacts",
-                            Toast.LENGTH_SHORT).show();
                     break;
                 case Manifest.permission.CAMERA:
                     ActivityCompat.requestPermissions(this, new String[] {permission}, MY_PERM_CAMERA);
-                    Toast.makeText(getApplicationContext(), "Permissions have now been granted for using the Camera",
-                            Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     break;
             }
+        }
+
+    }// requestPermission
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults){
+
+        switch(requestCode){
+            case MY_PERM_READ_CONTACTS:
+                if(isPermissionGranted(Manifest.permission.READ_CONTACTS)) {
+                    Toast.makeText(getApplicationContext(), "Permissions have now been granted for reading Contacts",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Permissions have been denied for reading Contacts",
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case MY_PERM_CAMERA:
+                if(isPermissionGranted(Manifest.permission.CAMERA)) {
+                    Toast.makeText(getApplicationContext(), "Permissions have now been granted for using the Camera",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Permissions have been denied for using the Camera",
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                break;
         }
 
     }
